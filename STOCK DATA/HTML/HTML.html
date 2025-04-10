@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>THESTOCKYs</title>
+</head>
+<body>
+  }
+  <LI>
+< div class="Stock-widget">
+        <label for =>Enter Your Ticker</label>
+  < input type="text" id="StockJavaID">
+  <button onclick= "getstockdata()">Stock data</button>
+    <div id="Filledstockdata">
+  </div>
+  <script>
+    function getstockdata () {
+      const ticker =document.getElementById('StockJavaID').value;
+      jQuery(document).ready(function ($) {
+        $.ajax({
+          url: "https://api.twelvedata.com/time_series?"+ticker+"",
+        })})}
+</script>
+  </LI>
+</body>
+</html>
