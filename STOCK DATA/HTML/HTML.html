@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>THESTOCKYs</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-  }
   <LI>
-< div class="Stock-widget">
-        <label for =>Enter Your Ticker</label>
-  < input type="text" id="StockJavaID">
-  <button onclick= "getstockdata()">Stock data</button>
-    <div id="Filledstockdata">
-  </div>
+<div class=  "Stock-widget">
+        <label for = "StockJavaID">Enter Your Ticker</label>
+  <input type="text" id="StockJavaID">
+    <button onclick=" getstockdata()">Forecast</button>
+    <div id ="Filledstockdata"></div>
   <script>
     function getstockdata () {
-      const ticker =document.getElementById('StockJavaID').value;
+      const ticker = document.getElementById('StockJavaID').value;
       jQuery(document).ready(function ($) {
-        $.ajax({
-          url: "https://api.twelvedata.com/time_series?"+ticker+"",
+          $.ajax({ url: "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + ticker + "&outputsize=full&apikey=LWNPWB2MFHS0VKVV",
+       dataType: "json",
+        success: function (walloftext) {
+              const tickerdisplay = walloftext["Meta Data"][""];
+              let forecastHTML= ""
+
+                  forecastHTML+= "Symbol-" + ticker
+
+
+
+            document.getElementById("Filledstockdata").innerHTML = forecastHTML;
+
+        }
         })})}
 </script>
   </LI>
