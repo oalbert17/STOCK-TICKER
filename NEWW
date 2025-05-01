@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GUI API Performance Task</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+
+        body{ font-family: 'tangerine';
+        font-size: 16px;
+        font-weight: normal;
+        font-style: italic;
+        text-align: center;
+        text-decoration: underline;
+        letter-spacing: 0.5px;
+        line-height: 1.6;}
+
+    </style>
+</head>
+<body>
+
+    <div class="MovieJavaID">
+        <label for="MOVIE-NAME">Enter a Movie:</label>
+        <input type="text" id="MOVIE-NAME">
+        <button onclick="getMovie()">Get Movie Info</button>
+        <div id="MovieResults"></div>
+
+        <script>
+            
+                function getMovie() {    
+                const movie = document.getElementById('MOVIE-NAME').value;
+    jQuery(document).ready(function($) {//
+    $.ajax({
+    url : "http://www.omdbapi.com/?apikey=69d6c729&t="+movie,
+    dataType:"json",
+            success : function(walloftext){  
+            }
+        const title;
+                const year= walloftext["Year"];
+                const rating= walloftext["Ratings"]["imdbRating"];
+                const director= walloftext["Director"];
+                const writer= walloftext["Writer"];
+                const actor= walloftext["Actors"];
+                const plot= walloftext["Plot"];
+                const rotten= walloftext["Ratings"]["1"];
+                const box= walloftext["BoxOffice"];
+                const poster= walloftext[];
+
+        forecastHTML +='year'+ year
+            }
+   
+        </script>
+
+
+</body>
+</html>
